@@ -1,0 +1,23 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd"
+	version="3.1">
+
+    <persistence-unit name="JpaOneToManyApp" transaction-type="RESOURCE_LOCAL">
+        <properties>
+            <!-- JDBC configuration for PostgreSQL -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/capg_db"/>
+            <property name="jakarta.persistence.jdbc.user" value="postgres"/>
+            <property name="jakarta.persistence.jdbc.password" value="admin"/>
+
+            <!-- Hibernate configuration -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="true"/> <!-- Optional: Pretty-print SQL output -->
+            <!-- Optional: Set timezone for JDBC connections -->
+            <property name="hibernate.jdbc.time_zone" value="UTC"/>
+        </properties>
+    </persistence-unit>
+</persistence>
